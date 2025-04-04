@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Study Planner</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Study Planner</h1>
+      <p>Organize your studies efficiently</p>
+    </header>
+
+    <main>
+      <section class="add-subject">
+        <h2><i class="fas fa-plus-circle"></i> Add New Subject</h2>
+        <form id="subjectForm">
+          <input type="text" id="subjectName" placeholder="Subject Name" required>
+          <select id="priority" required>
+            <option value="high">High Priority</option>
+            <option value="medium">Medium Priority</option>
+            <option value="low">Low Priority</option>
+          </select>
+          <input type="date" id="deadline" required>
+          <button type="submit">Add Subject</button>
+        </form>
+      </section>
+
+      <section class="subjects">
+        <h2>My Subjects</h2>
+        <div id="subjectList" class="subject-grid"></div>
+      </section>
+
+      <section class="schedule">
+        <h2><i class="fas fa-calendar-alt"></i> Academic Schedule</h2>
+        <div class="schedule-grid">
+          <div class="time-slots">
+            <div class="time-header">Time</div>
+            <div>09:00</div>
+            <div>10:00</div>
+            <div>11:00</div>
+            <div>12:00</div>
+            <div>13:00</div>
+            <div>14:00</div>
+            <div>15:00</div>
+            <div>16:00</div>
+            <div>17:00</div>
+            <div>18:00</div>
+            <div>19:00</div>
+            <div>20:00</div>
+          </div>
+          <div class="weekday" data-day="Monday">
+            <div class="day-header">Monday</div>
+            <div class="schedule-slot" data-time="9"></div>
+            <div class="schedule-slot" data-time="10"></div>
+            <div class="schedule-slot" data-time="11"></div>
+            <div class="schedule-slot" data-time="12"></div>
+            <div class="schedule-slot" data-time="13"></div>
+            <div class="schedule-slot" data-time="14"></div>
+            <div class="schedule-slot" data-time="15"></div>
+            <div class="schedule-slot" data-time="16"></div>
+          </div>
+          <div class="weekday" data-day="Tuesday">
+            <div class="day-header">Tuesday</div>
+            <div class="schedule-slot" data-time="9"></div>
+            <div class="schedule-slot" data-time="10"></div>
+            <div class="schedule-slot" data-time="11"></div>
+            <div class="schedule-slot" data-time="12"></div>
+            <div class="schedule-slot" data-time="13"></div>
+            <div class="schedule-slot" data-time="14"></div>
+            <div class="schedule-slot" data-time="15"></div>
+            <div class="schedule-slot" data-time="16"></div>
+          </div>
+          <div class="weekday" data-day="Wednesday">
+            <div class="day-header">Wednesday</div>
+            <div class="schedule-slot" data-time="9"></div>
+            <div class="schedule-slot" data-time="10"></div>
+            <div class="schedule-slot" data-time="11"></div>
+            <div class="schedule-slot" data-time="12"></div>
+            <div class="schedule-slot" data-time="13"></div>
+            <div class="schedule-slot" data-time="14"></div>
+            <div class="schedule-slot" data-time="15"></div>
+            <div class="schedule-slot" data-time="16"></div>
+          </div>
+          <div class="weekday" data-day="Thursday">
+            <div class="day-header">Thursday</div>
+            <div class="schedule-slot" data-time="9"></div>
+            <div class="schedule-slot" data-time="10"></div>
+            <div class="schedule-slot" data-time="11"></div>
+            <div class="schedule-slot" data-time="12"></div>
+            <div class="schedule-slot" data-time="13"></div>
+            <div class="schedule-slot" data-time="14"></div>
+            <div class="schedule-slot" data-time="15"></div>
+            <div class="schedule-slot" data-time="16"></div>
+          </div>
+          <div class="weekday" data-day="Friday">
+            <div class="day-header">Friday</div>
+            <div class="schedule-slot" data-time="9"></div>
+            <div class="schedule-slot" data-time="10"></div>
+            <div class="schedule-slot" data-time="11"></div>
+            <div class="schedule-slot" data-time="12"></div>
+            <div class="schedule-slot" data-time="13"></div>
+            <div class="schedule-slot" data-time="14"></div>
+            <div class="schedule-slot" data-time="15"></div>
+            <div class="schedule-slot" data-time="16"></div>
+          </div>
+         
+          
+        </div>
+      </section>
+
+      <section class="study-timer">
+        <h2><i class="fas fa-clock"></i> Study Timer</h2>
+        <input type="number" id="timerMinutes" value="25" min="1" max="120" class="timer-input">
+        <div class="timer-display">25:00</div>
+        <button id="startTimer">Start Study Session</button>
+        
+        <div class="music-player">
+          <h3><i class="fas fa-music"></i> Study Music</h3>
+          <iframe style="border-radius:12px" 
+            src="https://open.spotify.com/embed/playlist/37i9dQZF1DX8NTLI2TtZa6" 
+            width="100%" 
+            height="352" 
+            frameBorder="0" 
+            allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+          </iframe>
+        </div>
+      </section>
+
+      <section class="progress">
+        <h2><i class="fas fa-chart-line"></i> Progress Tracker</h2>
+        <div class="streak-counter">
+          Current Streak: <span id="streakCount">0</span> days
+        </div>
+        <div class="progress-bars" id="progressBars"></div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+
